@@ -10,7 +10,11 @@ textArea.addEventListener('blur', validations)
 
 function validations(e){
     if(e.target.value.trim() === ''){
-        console.log('is not valide')
+        showAlert(`The field ${e.target.id} is not valide`, e.target.parentNode);
     }
+}
+
+function showAlert(string, referenceMessage){
+    console.log(string, referenceMessage);
 }
 
