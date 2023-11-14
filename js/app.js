@@ -16,5 +16,13 @@ function validations(e){
 
 function showAlert(string, referenceMessage){
     console.log(string, referenceMessage);
+
+    //Crear html
+    let messageError = document.createElement('P');
+    messageError.textContent = string;
+    
+    // Mostrar html creado
+    referenceMessage.appendChild(messageError);
+
 }
 
