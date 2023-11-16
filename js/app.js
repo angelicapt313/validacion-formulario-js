@@ -15,12 +15,12 @@ function validations(e){
 }
 
 function showAlert(string, referenceMessage){
-    console.log(string, referenceMessage);
-
     //Crear html
     let messageError = document.createElement('P');
     messageError.textContent = string;
-    
+    messageError.classList.add('nombreInput--error')
+    let borderInputError = referenceMessage.lastElementChild;
+    borderInputError.classList.add('borderError--input')
     // Mostrar html creado
     referenceMessage.appendChild(messageError);
 

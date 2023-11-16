@@ -1,0 +1,10 @@
+.nombreInput--error{
+    background-color : #dc3545 ;
+    width: max-content;
+    padding: 2px;
+    color: white;
+}
+
+.borderError--input{
+    border: 2px solid #dc3545;
+}
