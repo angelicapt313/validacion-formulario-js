@@ -15,13 +15,20 @@ function validations(e){
 }
 
 function showAlert(string, referenceMessage){
-    //Crear html
+
+    const deleteMultipleAlerts = referenceMessage.querySelector('.nombreInput--error', '.borderError--input')
+
+    if(deleteMultipleAlerts){
+        deleteMultipleAlerts.remove();
+    }
+
+  
     let messageError = document.createElement('P');
     messageError.textContent = string;
     messageError.classList.add('nombreInput--error');
     let borderInputError = referenceMessage.lastElementChild;
     borderInputError.classList.add('borderError--input');
-    // Mostrar html creado
+  
     referenceMessage.appendChild(messageError);
 
 }
