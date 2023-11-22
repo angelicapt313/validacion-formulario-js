@@ -9,3 +9,7 @@
 .borderError--input{
     border: 2px solid #dc3545;
 }
+
+.success{
+    border: 2px solid rgba(0, 0, 255, 0.39);
+}
