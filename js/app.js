@@ -8,40 +8,47 @@ email.addEventListener('blur', validations);
 textArea.addEventListener('blur', validations)
 
 
-function validations(e){
+function validations(e) {
 
-
-    if(e.target.value.trim() === ''){
+    if (e.target.value.trim() === '') {
         showAlert(`The field ${e.target.id} is required.`, e.target.parentElement);
         return
-    }else{
-        let success = e.target;
-        success.classList.add('success');
     }
 
-    cleanFields(e.target.parentElement)
-   
+    if (e.target.id === 'email' && !validateEmail(e.target.value)) {
+        showAlert('Email incorrect', e.target.parentElement); 
+        return
+    }
+    
+    cleanFields(e.target.parentElement);
+    
 }
 
-function showAlert(string, referenceMessage){
+function showAlert(string, referenceMessage) {
 
     cleanFields(referenceMessage);
-  
+
     let messageError = document.createElement('P');
     messageError.textContent = string;
     messageError.classList.add('nombreInput--error');
 
-    let borderInputError = referenceMessage.querySelector('.form-control');
-    borderInputError.classList.add('borderError--input');
-  
+    let inputError = referenceMessage.querySelector('.form-control');
+    inputError.classList.add('borderError--input')
+
     referenceMessage.appendChild(messageError);
 
 }
 
-function cleanFields(reference){
-    let deleteMultipleAlerts = reference.querySelector('.nombreInput--error', '.borderError--input');
-    if(deleteMultipleAlerts){
+function cleanFields(reference) {
+    let deleteMultipleAlerts = reference.querySelector('.nombreInput--error');
+
+    if (deleteMultipleAlerts) {
         deleteMultipleAlerts.remove();
     }
 }
 
+function validateEmail(email) {
+    let regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+    let result = regex.test(email);
+    return result;
+}
