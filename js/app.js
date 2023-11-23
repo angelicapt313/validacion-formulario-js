@@ -19,11 +19,15 @@ function validations(e) {
 
     if (e.target.value.trim() === '') {
         showAlert(`The field ${e.target.id} is required.`, e.target.parentElement);
+        saveValuesForm[e.target.id] = '';
+        validateFieldsForm();
         return
     }
 
     if (e.target.id === 'email' && !validateEmail(e.target.value)) {
         showAlert('Email incorrect', e.target.parentElement); 
+        saveValuesForm[e.target.id] = '';
+        validateFieldsForm();
         return
     }
 
