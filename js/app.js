@@ -7,6 +7,12 @@ nombre.addEventListener('blur', validations);
 email.addEventListener('blur', validations);
 textArea.addEventListener('blur', validations)
 
+const saveValuesForm = {
+    name: '',
+    email: '',
+    comments: ''
+};
+
 
 function validations(e) {
 
@@ -19,7 +25,9 @@ function validations(e) {
         showAlert('Email incorrect', e.target.parentElement); 
         return
     }
-    
+
+    saveValuesForm[e.target.id] = e.target.value.trim().toLowerCase();
+
     cleanFields(e.target.parentElement);
     
 }
