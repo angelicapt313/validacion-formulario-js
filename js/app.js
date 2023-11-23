@@ -1,6 +1,7 @@
 const nombre = document.querySelector('.nombreInput');
 const email = document.querySelector('.emailInput');
 const textArea = document.querySelector('.textArea');
+const btnSend = document.querySelector('.btnSend')
 
 
 nombre.addEventListener('blur', validations);
@@ -26,10 +27,11 @@ function validations(e) {
         return
     }
 
-    saveValuesForm[e.target.id] = e.target.value.trim().toLowerCase();
-
     cleanFields(e.target.parentElement);
     
+    saveValuesForm[e.target.id] = e.target.value.trim().toLowerCase();
+
+    validateFieldsForm();
 }
 
 function showAlert(string, referenceMessage) {
@@ -59,4 +61,13 @@ function validateEmail(email) {
     let regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     let result = regex.test(email);
     return result;
+}
+
+function validateFieldsForm(){
+    if(Object.values(saveValuesForm).includes('')){
+        btnSend.disabled = true;
+        return
+    }
+        btnSend.disabled = false;
+    
 }
