@@ -4,6 +4,7 @@ const textArea = document.querySelector('.textArea');
 const btnSend = document.querySelector('#formulario button[type="submit"]')
 const btnReset = document.querySelector('#formulario button[type="reset"]');
 const formulario = document.querySelector('#formulario');
+const spinner = document.querySelector('#spinner');
 
 nombre.addEventListener('blur', validations);
 email.addEventListener('blur', validations);
@@ -18,7 +19,7 @@ const saveValuesForm = {
 
 btnReset.addEventListener('click', function(){
     resetForm();
-})
+});
 
 function validations(e) {
 
@@ -90,3 +91,27 @@ function resetForm(){
 
     validateFieldsForm();
 }
+
+function sendForm(e){
+    e.preventDefault();
+
+    spinner.classList.add('d-flex');
+    spinner.classList.remove('visually-hidden');
+
+    setTimeout(()=>{
+        spinner.classList.remove('d-flex');
+        spinner.classList.add('visually-hidden');
+
+        const msgSuccess = document.createElement('P');
+        msgSuccess.textContent = 'Message sent succesfully';
+        formulario.appendChild(msgSuccess);
+
+        setTimeout(()=>{
+            msgSuccess.remove();
+        }, 4000)
+
+    }, 3000)
+
+   
+}
+
