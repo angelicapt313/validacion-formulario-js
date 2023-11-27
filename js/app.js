@@ -1,19 +1,19 @@
 const nombre = document.querySelector('.nombreInput');
 const email = document.querySelector('.emailInput');
 const textArea = document.querySelector('.textArea');
-const btnSend = document.querySelector('.btnSend')
-
+const btnSend = document.querySelector('#formulario button[type="submit"]')
+const btnReset = document.querySelector('#formulario button[type="reset"]');
 
 nombre.addEventListener('blur', validations);
 email.addEventListener('blur', validations);
 textArea.addEventListener('blur', validations)
+
 
 const saveValuesForm = {
     name: '',
     email: '',
     comments: ''
 };
-
 
 function validations(e) {
 
