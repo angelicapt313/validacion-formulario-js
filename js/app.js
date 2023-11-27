@@ -104,6 +104,8 @@ function sendForm(e){
         spinner.classList.remove('d-flex');
         spinner.classList.add('visually-hidden'); 
 
+        resetForm();
+
         const msgSuccess = document.createElement('P');
         msgSuccess.textContent = 'Message sent succesfully';
         formulario.appendChild(msgSuccess);
