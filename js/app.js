@@ -3,6 +3,7 @@ const email = document.querySelector('.emailInput');
 const textArea = document.querySelector('.textArea');
 const btnSend = document.querySelector('#formulario button[type="submit"]')
 const btnReset = document.querySelector('#formulario button[type="reset"]');
+const formulario = document.querySelector('#formulario');
 
 nombre.addEventListener('blur', validations);
 email.addEventListener('blur', validations);
@@ -14,6 +15,7 @@ const saveValuesForm = {
     email: '',
     comments: ''
 };
+
 
 function validations(e) {
 
@@ -75,3 +77,4 @@ function validateFieldsForm(){
         btnSend.disabled = false;
     
 }
+
