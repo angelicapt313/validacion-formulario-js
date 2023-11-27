@@ -16,6 +16,10 @@ const saveValuesForm = {
     comments: ''
 };
 
+btnReset.addEventListener('click', function(){
+    resetForm();
+})
+
 function validations(e) {
 
     if (e.target.value.trim() === '') {
