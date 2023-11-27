@@ -107,7 +107,8 @@ function sendForm(e){
         resetForm();
 
         const msgSuccess = document.createElement('P');
-        msgSuccess.textContent = 'Message sent succesfully';
+        msgSuccess.textContent = 'Message sent succesfully!';
+        msgSuccess.classList.add('fs-3', 'text-success', 'mt-2', 'text-center', 'fw-bold');
         formulario.appendChild(msgSuccess);
 
         setTimeout(()=>{
