@@ -16,7 +16,6 @@ const saveValuesForm = {
     comments: ''
 };
 
-
 function validations(e) {
 
     if (e.target.value.trim() === '') {
@@ -78,3 +77,12 @@ function validateFieldsForm(){
     
 }
 
+function resetForm(){
+    saveValuesForm.name = '';
+    saveValuesForm.email = '';
+    saveValuesForm.comments = '';
+
+    formulario.reset();
+
+    validateFieldsForm();
+}
