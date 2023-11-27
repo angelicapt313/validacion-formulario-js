@@ -6,9 +6,9 @@ const btnReset = document.querySelector('#formulario button[type="reset"]');
 const formulario = document.querySelector('#formulario');
 const spinner = document.querySelector('#spinner');
 
-nombre.addEventListener('blur', validations);
-email.addEventListener('blur', validations);
-textArea.addEventListener('blur', validations)
+nombre.addEventListener('input', validations);
+email.addEventListener('input', validations);
+textArea.addEventListener('input', validations)
 
 
 const saveValuesForm = {
@@ -30,7 +30,8 @@ function validations(e) {
         saveValuesForm[e.target.id] = '';
         validateFieldsForm();
         return
-    }
+    } 
+
 
     if (e.target.id === 'email' && !validateEmail(e.target.value)) {
         showAlert('Email incorrect', e.target.parentElement); 
