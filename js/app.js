@@ -21,6 +21,8 @@ btnReset.addEventListener('click', function(){
     resetForm();
 });
 
+formulario.addEventListener('submit', sendForm);
+
 function validations(e) {
 
     if (e.target.value.trim() === '') {
@@ -100,7 +102,7 @@ function sendForm(e){
 
     setTimeout(()=>{
         spinner.classList.remove('d-flex');
-        spinner.classList.add('visually-hidden');
+        spinner.classList.add('visually-hidden'); 
 
         const msgSuccess = document.createElement('P');
         msgSuccess.textContent = 'Message sent succesfully';
