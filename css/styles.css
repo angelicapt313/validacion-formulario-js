@@ -1,15 +1,37 @@
-.nombreInput--error{
-    background-color : #dc3545 ;
-    width: max-content;
-    margin-top: 5px;
-    padding: 4px;
-    color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.borderError--input{
-    border: 2px solid #dc3545;
+.container-fluid {
+  min-height: 100vh;
 }
 
-.success{
-    border: 2px solid rgba(0, 0, 255, 0.39);
+.contact__form{
+  background: url('/assets/blurry-gradient-haikei.png') no-repeat;
+  background-size: cover;
+}
+
+.contact__form .card{
+  height: 80dvh;
+}
+
+
+
+.nombreInput--error {
+  background-color: #dc3545;
+  width: max-content;
+  margin-top: 5px;
+  padding: 4px;
+  color: white;
+}
+
+.borderError--input {
+  border: 2px solid #dc3545;
+}
+
+.success {
+  border: 2px solid rgba(0, 0, 255, 0.39);
 }
