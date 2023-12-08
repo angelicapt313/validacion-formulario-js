@@ -9,14 +9,27 @@
   min-height: 100vh;
 }
 
-.contact__form{
-  background: url('/assets/blurry-gradient-haikei.png') no-repeat;
-  background-size: cover;
+.card{
+  background:transparent;
+  border: none;
+  
 }
 
-.contact__form .card{
+.contact__form{
+  background: url('/assets/blurry-gradient-haikei.png');
+  background-size: cover;
+  
+}
+
+.contact__form .row{
   height: 80dvh;
-  margin-top: 5%;
+  margin: 6% 0;
+  box-shadow: rgba(0, 0, 0, 0.538) 0px 0px 5px 0px, rgba(0, 0, 0, 0.74) 0px 0px 5px 0px;}
+
+.contact__form__left{
+  background-image: url('/assets/6802363_26957.jpg');
+  background-size: cover;
+  background-position: center center;
 }
 
 
