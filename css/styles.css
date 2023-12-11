@@ -24,7 +24,9 @@
 .contact__form .row{
   height: 80dvh;
   margin: 6% 0;
-  box-shadow: rgba(0, 0, 0, 0.538) 0px 0px 5px 0px, rgba(0, 0, 0, 0.74) 0px 0px 5px 0px;}
+  box-shadow: rgba(0, 0, 0, 0.538) 0px 0px 5px 0px, rgba(0, 0, 0, 0.74) 0px 0px 5px 0px;
+  border-radius: 4%;
+}
 
 .contact__form__left{
   background-image: url('/assets/6802363_26957.jpg');
