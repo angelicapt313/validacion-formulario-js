@@ -62,6 +62,17 @@
 
 }
 
+.contact__form__right{
+  background-color: whitesmoke;
+  display: grid;
+  align-items: center;
+
+}
+
+.card__content__form{
+  width: 100%;
+}
+
 
 .nombreInput--error {
   background-color: #dc3545;
