@@ -41,13 +41,27 @@
   width: 450px;
   height: 200px;
   padding: 5%;
-  color: white;
   background: rgba(255, 255, 255, .1);
   border-radius: 50px;
   border-right: 2px solid rgba(255, 255, 255, .2);
   border-bottom: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(50px);
 }
+
+.title{
+  color: whitesmoke;
+  font-size: 30px;
+  padding: 1%;
+}
+
+.subTitle{
+  color: #e7b5f8;
+  font-size: 19px;
+  font-weight: bold;
+  padding: 3%;
+
+}
+
 
 .nombreInput--error {
   background-color: #dc3545;
