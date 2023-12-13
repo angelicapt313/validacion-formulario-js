@@ -5,6 +5,7 @@ const btnSend = document.querySelector('#formulario button[type="submit"]')
 const btnReset = document.querySelector('#formulario button[type="reset"]');
 const formulario = document.querySelector('#formulario');
 const spinner = document.querySelector('#spinner');
+const cardHidden = document.querySelector('.card__hidden');
 
 nombre.addEventListener('input', validations);
 email.addEventListener('input', validations);
@@ -97,12 +98,12 @@ function resetForm(){
 
 function sendForm(e){
     e.preventDefault();
-
     
     spinner.classList.add('d-flex');
     spinner.classList.remove('visually-hidden');
 
     setTimeout(()=>{
+
         spinner.classList.remove('d-flex');
         spinner.classList.add('visually-hidden'); 
 
