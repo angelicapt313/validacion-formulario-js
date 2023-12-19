@@ -3,9 +3,9 @@ const email = document.querySelector('.emailInput');
 const textArea = document.querySelector('.textArea');
 const btnSend = document.querySelector('#formulario button[type="submit"]')
 const btnReset = document.querySelector('#formulario button[type="reset"]');
-const formulario = document.querySelector('#formulario');
 const spinner = document.querySelector('#spinner');
 const cardHidden = document.querySelector('.card__hidden');
+const msgExito = document.querySelector('.msg__exito');
 
 nombre.addEventListener('input', validations);
 email.addEventListener('input', validations);
@@ -18,7 +18,7 @@ const saveValuesForm = {
     comments: ''
 };
 
-btnReset.addEventListener('click', function(){
+btnReset.addEventListener('click', function () {
     resetForm();
 });
 
@@ -31,18 +31,18 @@ function validations(e) {
         saveValuesForm[e.target.id] = '';
         validateFieldsForm();
         return
-    } 
+    }
 
 
     if (e.target.id === 'email' && !validateEmail(e.target.value)) {
-        showAlert('Email incorrect', e.target.parentElement); 
+        showAlert('Email incorrect', e.target.parentElement);
         saveValuesForm[e.target.id] = '';
         validateFieldsForm();
         return
     }
 
     cleanFields(e.target.parentElement);
-    
+
     saveValuesForm[e.target.id] = e.target.value.trim().toLowerCase();
 
     validateFieldsForm();
@@ -77,16 +77,16 @@ function validateEmail(email) {
     return result;
 }
 
-function validateFieldsForm(){
-    if(Object.values(saveValuesForm).includes('')){
+function validateFieldsForm() {
+    if (Object.values(saveValuesForm).includes('')) {
         btnSend.disabled = true;
         return
     }
-        btnSend.disabled = false;
-    
+    btnSend.disabled = false;
+
 }
 
-function resetForm(){
+function resetForm() {
     saveValuesForm.name = '';
     saveValuesForm.email = '';
     saveValuesForm.comments = '';
@@ -96,35 +96,42 @@ function resetForm(){
     validateFieldsForm();
 }
 
-function sendForm(e){
+function sendForm(e) {
     e.preventDefault();
 
-    
+
     spinner.classList.add('d-flex');
     spinner.classList.remove('visually-hidden');
 
 
-    setTimeout(()=>{
+
+    setTimeout(() => {
         cardHidden.classList.add('visually-hidden');
     }, 1,
-    
-    setTimeout(() =>{
-        cardHidden.classList.remove('visually-hidden');
-    }, 5000));
 
-    setTimeout(()=>{
+        setTimeout(() => {
+            cardHidden.classList.remove('visually-hidden');
+        }, 4000));
+
+
+    setTimeout(() => {
 
         spinner.classList.remove('d-flex');
-        spinner.classList.add('visually-hidden'); 
+        spinner.classList.add('visually-hidden');
+
+        msgExito.classList.add('d-flex');
+        msgExito.classList.remove('visually-hidden');
 
         resetForm();
+        
+    setTimeout(() => {
 
-        const msgSuccess = document.createElement('P');
-        msgSuccess.textContent = 'Message sent succesfully!';
-        msgSuccess.classList.add('fs-3', 'text-success', 'mt-2', 'text-center', 'fw-bold');
+        msgExito.classList.remove('d-flex');
+        msgExito.classList.add('visually-hidden');
+    }, 1000)
 
-    }, 3000)
+    }, 2000)
 
-   
+    
 }
 
